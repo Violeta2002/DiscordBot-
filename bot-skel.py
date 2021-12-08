@@ -20,6 +20,10 @@ import youtube_dl
 from discord.ext import commands,tasks    # Bot class and utils
 from dotenv import load_dotenv
 
+import argparse 
+parser = argparse.ArgumentParser()
+parser.add_argument("--token", help="Instead of creating an environment variabile that contains the necessary token for the bot, you may introduce it here")
+args = parser.parse_args()
  
 ################################################################################
 ############################### HELPER FUNCTIONS ###############################
@@ -236,3 +240,15 @@ if __name__== '__main__':
  
     # launch bot (blocking operation)
     bot.run(os.environ['BOT_TOKEN'])
+   
+if __name__ == '__main__"
+	if( 'BOT_TOKEN' not in os.environ:
+	if(args.token):
+		bot.run(args.token)
+	else:
+		log_msg('Please introduce the token!', 'error')
+		exit(-1)
+	else:
+		bot.run(os.environ['BOT_TOKEN'])
+code.interact(local=dict(globals(), **locals()))
+
